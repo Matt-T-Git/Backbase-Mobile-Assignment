@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44BF7DB25C9EFAA007C70DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44BF7DA25C9EFAA007C70DB /* MapKit.framework */; };
 		B4B47E2E25C9C63D007EA08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B47E2D25C9C63D007EA08C /* AppDelegate.swift */; };
 		B4B47E3025C9C63D007EA08C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B47E2F25C9C63D007EA08C /* SceneDelegate.swift */; };
 		B4B47E3225C9C63D007EA08C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B47E3125C9C63D007EA08C /* ListViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B44BF7DA25C9EFAA007C70DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B4B47E2A25C9C63D007EA08C /* City-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B47E2D25C9C63D007EA08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B47E2F25C9C63D007EA08C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44BF7DB25C9EFAA007C70DB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B44BF7D925C9EFAA007C70DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B44BF7DA25C9EFAA007C70DB /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B4B47E2125C9C63D007EA08C = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +108,7 @@
 				B4B47E4325C9C63E007EA08C /* City-SearchTests */,
 				B4B47E4E25C9C63F007EA08C /* City-SearchUITests */,
 				B4B47E2B25C9C63D007EA08C /* Products */,
+				B44BF7D925C9EFAA007C70DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
