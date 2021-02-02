@@ -18,6 +18,8 @@
 		B4B47E6525C9C722007EA08C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B47E6425C9C722007EA08C /* Models.swift */; };
 		B4B47E6A25C9C7CE007EA08C /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = B4B47E6925C9C7CE007EA08C /* cities.json */; };
 		B4B47E7625C9C9D5007EA08C /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B47E7525C9C9D5007EA08C /* DataHandler.swift */; };
+		B4B47E7D25C9D2EB007EA08C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B47E7B25C9D2EB007EA08C /* SearchResultCell.swift */; };
+		B4B47E7E25C9D2EB007EA08C /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B47E7C25C9D2EB007EA08C /* SearchResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B4B47E6425C9C722007EA08C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B4B47E6925C9C7CE007EA08C /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		B4B47E7525C9C9D5007EA08C /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		B4B47E7B25C9D2EB007EA08C /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		B4B47E7C25C9D2EB007EA08C /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		B4B47E2C25C9C63D007EA08C /* City-Search */ = {
 			isa = PBXGroup;
 			children = (
+				B4B47E7A25C9D2CA007EA08C /* Views */,
 				B4B47E7425C9C9C1007EA08C /* Data */,
 				B4B47E6325C9C701007EA08C /* Models */,
 				B4B47E6225C9C6A0007EA08C /* Storyboards */,
@@ -175,6 +180,15 @@
 				B4B47E7525C9C9D5007EA08C /* DataHandler.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B4B47E7A25C9D2CA007EA08C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4B47E7B25C9D2EB007EA08C /* SearchResultCell.swift */,
+				B4B47E7C25C9D2EB007EA08C /* SearchResultCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4B47E6A25C9C7CE007EA08C /* cities.json in Resources */,
+				B4B47E7E25C9D2EB007EA08C /* SearchResultCell.xib in Resources */,
 				B4B47E3A25C9C63E007EA08C /* LaunchScreen.storyboard in Resources */,
 				B4B47E3725C9C63E007EA08C /* Assets.xcassets in Resources */,
 				B4B47E3525C9C63D007EA08C /* Main.storyboard in Resources */,
@@ -312,6 +327,7 @@
 				B4B47E2E25C9C63D007EA08C /* AppDelegate.swift in Sources */,
 				B4B47E3025C9C63D007EA08C /* SceneDelegate.swift in Sources */,
 				B4B47E6525C9C722007EA08C /* Models.swift in Sources */,
+				B4B47E7D25C9D2EB007EA08C /* SearchResultCell.swift in Sources */,
 				B4B47E7625C9C9D5007EA08C /* DataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
