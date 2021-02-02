@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ListViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     private var cityData: [City] = []
@@ -17,6 +17,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         title = "Backbase City Search"
+        self.fetchAllCities()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -24,6 +25,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.registerTableViewCells()
         self.setupSearchBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let index = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
     }
     
     // MARK: - Searchbar Functions
@@ -43,10 +51,17 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - TableView Delegate Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return cityData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell") as? SearchResultCell {
+            let city = cityData[indexPath.row]
+            cell.cityNameLabel.text = city.name
+            cell.countryCodeLabel.text = city.country
+            cell.latLongLabel.text = "Lat: \(city.coord.lat)," + " Long: \(city.coord.lon)"
+            return cell
+        }
         return UITableViewCell()
     }
 
@@ -54,5 +69,28 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let searchCell = UINib(nibName: "SearchResultCell", bundle: nil)
         self.tableView.register(searchCell, forCellReuseIdentifier: "SearchResultCell")
     }
-
+    
+    // MARK: - Data Fetch Functions
+    private func fetchAllCities() {
+        DataHandler().fetchAllCities { (result) in
+            
+            self.startIndicator()
+            switch result {
+            
+            case .success(let cities):
+                DispatchQueue.main.async {
+                    self.cityData = cities
+                    self.stopIndicator()
+                    self.tableView.reloadData()
+                }
+                break
+                
+            case .failure(let error):
+                    self.stopIndicator()
+                    self.showErrorMessage(message: error.localizedDescription)
+                break
+            }
+        }
+    }
+    
 }
