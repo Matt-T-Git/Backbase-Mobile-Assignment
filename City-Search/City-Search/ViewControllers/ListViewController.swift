@@ -37,10 +37,11 @@ class ListViewController: BaseViewController, UITableViewDataSource, UITableView
     // MARK: - Searchbar Functions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        self.fetchCitiesWitchPrefix(prefix: searchBar.text ?? "")
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        self.fetchCitiesWitchPrefix(prefix: searchText)
     }
     
     func setupSearchBar() {
@@ -64,7 +65,13 @@ class ListViewController: BaseViewController, UITableViewDataSource, UITableView
         }
         return UITableViewCell()
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let city = cityData[indexPath.row]
+        print(city.name)
+        //TODO: Show MapView
+    }
+    
     private func registerTableViewCells() {
         let searchCell = UINib(nibName: "SearchResultCell", bundle: nil)
         self.tableView.register(searchCell, forCellReuseIdentifier: "SearchResultCell")
@@ -93,4 +100,9 @@ class ListViewController: BaseViewController, UITableViewDataSource, UITableView
         }
     }
     
+    private func fetchCitiesWitchPrefix(prefix: String) {
+        let filtered = DataHandler.sharedInstance.fetchCitiesWithPrefix(prefix: prefix)
+        cityData = filtered
+        self.tableView.reloadData()
+    }
 }
