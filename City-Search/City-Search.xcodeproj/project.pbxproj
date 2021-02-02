@@ -99,12 +99,10 @@
 		B4B47E2C25C9C63D007EA08C /* City-Search */ = {
 			isa = PBXGroup;
 			children = (
-				B4B47E2D25C9C63D007EA08C /* AppDelegate.swift */,
-				B4B47E2F25C9C63D007EA08C /* SceneDelegate.swift */,
-				B4B47E3125C9C63D007EA08C /* ViewController.swift */,
-				B4B47E3325C9C63D007EA08C /* Main.storyboard */,
+				B4B47E6225C9C6A0007EA08C /* Storyboards */,
+				B4B47E6125C9C68F007EA08C /* ViewControllers */,
+				B4B47E6025C9C680007EA08C /* Delegates */,
 				B4B47E3625C9C63E007EA08C /* Assets.xcassets */,
-				B4B47E3825C9C63E007EA08C /* LaunchScreen.storyboard */,
 				B4B47E3B25C9C63E007EA08C /* Info.plist */,
 			);
 			path = "City-Search";
@@ -126,6 +124,32 @@
 				B4B47E5125C9C63F007EA08C /* Info.plist */,
 			);
 			path = "City-SearchUITests";
+			sourceTree = "<group>";
+		};
+		B4B47E6025C9C680007EA08C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B4B47E2D25C9C63D007EA08C /* AppDelegate.swift */,
+				B4B47E2F25C9C63D007EA08C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B4B47E6125C9C68F007EA08C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4B47E3125C9C63D007EA08C /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B4B47E6225C9C6A0007EA08C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B4B47E3825C9C63E007EA08C /* LaunchScreen.storyboard */,
+				B4B47E3325C9C63D007EA08C /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
