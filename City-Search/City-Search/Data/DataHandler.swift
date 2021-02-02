@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataHandler { //TODO: TESTS
+class DataHandler {
     
     static let sharedInstance = DataHandler()
     var fullCityList : [City] = []
