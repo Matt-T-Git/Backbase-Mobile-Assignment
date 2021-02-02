@@ -68,8 +68,10 @@ class ListViewController: BaseViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = cityData[indexPath.row]
-        print(city.name)
-        //TODO: Show MapView
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "mapController") as! MapViewController
+        vc.coordinate = city.coord
+        vc.title = city.name + ", \(city.country)"
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     private func registerTableViewCells() {

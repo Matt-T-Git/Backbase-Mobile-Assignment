@@ -55,8 +55,41 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="133.92857142857142"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="dVg-Lc-1DH">
+            <objects>
+                <viewController storyboardIdentifier="mapController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cn9-m3-Stc" customClass="MapViewController" customModule="City_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Lb-kp-WnM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kE0-f6-7Cf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tua-3o-xhj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kE0-f6-7Cf" firstAttribute="top" secondItem="Tua-3o-xhj" secondAttribute="top" id="3dx-Bc-nLu"/>
+                            <constraint firstItem="kE0-f6-7Cf" firstAttribute="trailing" secondItem="5Lb-kp-WnM" secondAttribute="trailing" id="5Em-44-5u9"/>
+                            <constraint firstItem="kE0-f6-7Cf" firstAttribute="leading" secondItem="5Lb-kp-WnM" secondAttribute="leading" id="X3Y-7F-qT8"/>
+                            <constraint firstAttribute="bottom" secondItem="kE0-f6-7Cf" secondAttribute="bottom" id="tTK-1O-9l9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="kE0-f6-7Cf" id="aVI-oI-TQk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pRZ-wC-Ugk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871.01449275362324" y="133.92857142857142"/>
+        </scene>
     </scenes>
+    <color key="tintColor" name="cursorColor"/>
     <resources>
+        <namedColor name="cursorColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
